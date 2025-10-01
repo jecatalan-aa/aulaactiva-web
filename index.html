@@ -14,12 +14,12 @@
             background-color: #F8F9FA;
             color: #0B2545;
         }
-        /* Paleta de Colores Oficial de AulaActiva */
+        /* Paleta de Colores Oficial de AulaActiva - Precisa */
         :root {
-            --azul: #0071BC;
-            --verde: #39B54A;
-            --rojo: #ED1C24;
-            --amarillo: #FCEE21;
+            --azul: #0584D3;
+            --verde: #2CAE5F;
+            --rojo: #E6212A;
+            --amarillo: #F8C732;
             --azul-oscuro: #0B2545;
             --gris-claro: #F8F9FA;
             --gris-texto: #495057;
@@ -90,6 +90,15 @@
         #mobile-menu {
             transition: transform 0.3s ease-in-out;
         }
+
+        /* Estilos para el carrusel */
+        .carousel-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -98,7 +107,7 @@
     <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="flex items-center space-x-3" onclick="navigateTo('inicio')">
-                <!-- Logo Oficial de AulaActiva - Vinculado como archivo -->
+                <!-- Logo Oficial de AulaActiva - Tamaño ajustado -->
                 <img src="./images/logoAA_TDE.svg" alt="Logo AulaActiva" class="h-24">
             </a>
 
@@ -134,7 +143,7 @@
         
             <!-- PAGINA INICIO -->
             <div id="inicio-page">
-                <div class="pt-24">
+                <div class="pt-32">
                     <!-- Sección 1: Hero Banner -->
                     <section class="hero-bg relative text-white py-24 md:py-36">
                         <div class="absolute inset-0 bg-aa-darkblue/70"></div>
@@ -153,7 +162,6 @@
                             <h2 class="text-2xl md:text-4xl font-bold mb-8">¿Estamos preparando a nuestros estudiantes para el mundo real?</h2>
                             <div class="max-w-3xl mx-auto bg-black rounded-xl shadow-2xl overflow-hidden border-4 border-gray-700">
                                 <div class="aspect-w-16 aspect-h-9">
-                                    <!-- Placeholder for video -->
                                      <div class="w-full h-full bg-gray-900 flex items-center justify-center">
                                         <p class="text-gray-400">Espacio para Video de Cristina Escobar</p>
                                     </div>
@@ -192,7 +200,7 @@
                                 <!-- Pilar 1 -->
                                 <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 border-b-4 border-aa-blue">
                                     <div class="bg-aa-blue text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-5 shadow-lg">
-                                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 3l6-3m0 10V7"></path></svg>
+                                        <img src="./images/ico_vision.png" alt="Visión y Liderazgo" class="w-12 h-12">
                                     </div>
                                     <h4 class="text-xl font-bold mb-2">Visión y Liderazgo</h4>
                                     <p class="text-gray-600">Definimos juntos la hoja de ruta, asegurando que la tecnología responda a un objetivo pedagógico claro.</p>
@@ -200,7 +208,7 @@
                                 <!-- Pilar 2 -->
                                 <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 border-b-4 border-aa-green">
                                     <div class="bg-aa-green text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-5 shadow-lg">
-                                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                        <img src="./images/ico_habilidades.png" alt="Habilidades Digitales" class="w-12 h-12">
                                     </div>
                                     <h4 class="text-xl font-bold mb-2">Habilidades Digitales</h4>
                                     <p class="text-gray-600">Desarrollamos competencias y fluidez digital en docentes y directivos para potenciar la enseñanza.</p>
@@ -208,7 +216,7 @@
                                 <!-- Pilar 3 -->
                                 <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 border-b-4 border-aa-red">
                                     <div class="bg-aa-red text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-5 shadow-lg">
-                                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                        <img src="./images/ico_metodologias.png" alt="Metodologías Activas" class="w-12 h-12">
                                     </div>
                                     <h4 class="text-xl font-bold mb-2">Metodologías Activas</h4>
                                     <p class="text-gray-600">Conectamos la tecnología con pedagogías donde el estudiante asume un rol activo, creando y colaborando.</p>
@@ -216,7 +224,7 @@
                                 <!-- Pilar 4 -->
                                 <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 border-b-4 border-aa-yellow">
                                     <div class="bg-aa-yellow text-aa-darkblue rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-5 shadow-lg">
-                                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12l-9-9-9 9M3 10v10a2 2 0 002 2h14a2 2 0 002-2V10M12 21V10"></path></svg>
+                                        <img src="./images/ico_infraestructura.png" alt="Infraestructura y Recursos" class="w-12 h-12">
                                     </div>
                                     <h4 class="text-xl font-bold mb-2">Infraestructura y Recursos</h4>
                                     <p class="text-gray-600">Creamos el ecosistema digital que habilita el aprendizaje, desde la conectividad hasta el software robusto.</p>
@@ -255,7 +263,24 @@
                         </div>
                     </section>
         
-                    <!-- Sección 6: CTA Final Autodiagnóstico -->
+                    <!-- NUEVA Sección 6: Carrusel de Servicios -->
+                    <section id="servicesCarouselSection" class="bg-white py-16 md:py-24 fade-in-section">
+                        <div class="container mx-auto px-6">
+                            <h2 class="text-2xl md:text-4xl font-bold text-center text-aa-darkblue mb-12">Explora Nuestras Herramientas de Cambio</h2>
+                            <div class="relative">
+                                <div id="carousel-container" class="carousel-container flex overflow-x-auto space-x-8 pb-8">
+                                    <!-- Las tarjetas del carrusel se insertarán aquí -->
+                                </div>
+                            </div>
+                            <div class="text-center mt-8">
+                                <button onclick="navigateTo('servicios')" class="bg-aa-blue hover:bg-aa-darkblue text-white font-bold py-3 px-8 rounded-full text-lg cta-button">
+                                    Ver todos los Servicios
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sección 7: CTA Final Autodiagnóstico -->
                     <section id="ctaFinal" class="bg-aa-blue text-white py-16 md:py-24">
                         <div class="container mx-auto px-6 text-center">
                             <h2 class="text-2xl md:text-4xl font-bold mb-4">Da el Primer Paso Hacia la Transformación Digital</h2>
@@ -270,7 +295,7 @@
             
             <!-- PAGINA SERVICIOS -->
             <div id="servicios-page" class="hidden">
-                 <div class="pt-24 bg-gray-50"> 
+                 <div class="pt-32 bg-gray-50"> 
                     <section class="bg-aa-darkblue text-white py-16 md:py-24">
                         <div class="container mx-auto px-6 text-center">
                             <h1 class="text-3xl md:text-5xl font-bold">Nuestro Ecosistema de Servicios</h1>
@@ -290,7 +315,7 @@
 
             <!-- PAGINA BLOG -->
             <div id="blog-page" class="hidden">
-                 <div class="pt-24 bg-white min-h-screen flex items-center justify-center">
+                 <div class="pt-32 bg-white min-h-screen flex items-center justify-center">
                     <div class="container mx-auto px-6 text-center">
                         <h1 class="text-3xl md:text-5xl font-bold text-aa-darkblue mb-4">Blog en Construcción</h1>
                         <p class="text-lg md:text-xl text-gray-600">Estamos preparando reflexiones, estrategias y noticias sobre la vanguardia de la educación digital. ¡Vuelve pronto!</p>
@@ -303,7 +328,7 @@
 
             <!-- PAGINA NOSOTROS -->
             <div id="nosotros-page" class="hidden">
-                <div class="pt-24 bg-white min-h-screen flex items-center justify-center">
+                <div class="pt-32 bg-white min-h-screen flex items-center justify-center">
                     <div class="container mx-auto px-6 text-center">
                         <h1 class="text-3xl md:text-5xl font-bold text-aa-darkblue mb-4">Página en Construcción</h1>
                         <p class="text-lg md:text-xl text-gray-600">Somos un equipo apasionado por la educación. Pronto podrás conocer a quienes hacen posible la transformación en AulaActiva.</p>
@@ -315,6 +340,46 @@
             </div>
         </div>
     </main>
+
+    <!-- FORMULARIO DE CONTACTO GLOBAL -->
+    <section id="contact-section" class="bg-gray-100 py-16 md:py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue">Hablemos de tu Proyecto</h2>
+                <p class="text-lg text-gray-600 mt-2">Completa el formulario y uno de nuestros especialistas se pondrá en contacto contigo.</p>
+            </div>
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
+                <form id="contact-form">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2">Nombre Completo</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-aa-blue" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-aa-blue" required>
+                        </div>
+                        <div>
+                            <label for="institution" class="block text-gray-700 font-semibold mb-2">Institución Educativa</label>
+                            <input type="text" id="institution" name="institution" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-aa-blue">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-aa-blue" required></textarea>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <button type="submit" class="bg-aa-red hover:bg-red-700 text-white font-bold py-3 px-10 rounded-full text-lg cta-button">
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </form>
+                <div id="form-success-message" class="hidden mt-6 text-center text-lg p-4 bg-green-100 text-aa-green rounded-lg">
+                    ¡Gracias por tu mensaje! Nos pondremos en contacto contigo a la brevedad.
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="bg-aa-darkblue text-white">
@@ -368,6 +433,26 @@
             });
         }
         
+        function populateCarousel() {
+            const container = document.getElementById('carousel-container');
+            container.innerHTML = '';
+            const servicesToShow = servicesData.slice(0, 6); // Mostrar solo los primeros 6
+            servicesToShow.forEach(service => {
+                 const card = `
+                    <div class="flex-shrink-0 w-80 bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="navigateTo('servicios')">
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="text-aa-${service.color} mr-4">${service.icon}</div>
+                                <h3 class="text-lg font-bold text-aa-darkblue">${service.title}</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm">${service.description.substring(0, 100)}...</p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
         // Lógica para el menú móvil
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -413,8 +498,21 @@
             observer.observe(section);
         });
         
-        // Inicializar la página de servicios
+        // --- Formulario de Contacto ---
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('form-success-message');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la lógica para enviar el formulario a un servicio
+            // Por ahora, solo mostramos un mensaje de éxito
+            console.log('Formulario enviado (simulación)');
+            contactForm.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+        });
+
+        // Inicializar las páginas
         populateServices();
+        populateCarousel();
         
         // Cargar la página de inicio por defecto
         document.addEventListener('DOMContentLoaded', () => {
