@@ -305,7 +305,7 @@
 
                     <section class="py-16 md:py-20">
                         <div class="container mx-auto px-6">
-                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 <!-- Cards generadas dinámicamente -->
                             </div>
                         </div>
@@ -393,39 +393,27 @@
 
     <script>
         const servicesData = [
-            { title: "Liderazgo Digital para la Transformación", description: "A través de charlas y talleres prácticos, trabajamos con directivos y docentes para construir una visión compartida, alinear equipos y entregar las claves para liderar el cambio cultural y tecnológico.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 14.88a2 2 0 00-1.022.547m14.356 0a2 2 0 01.547 1.022l.477 2.387a6 6 0 01-.517 3.86l-.158.318a6 6 0 01-.517 3.86l-2.387.477a2 2 0 01-1.022-.547M3.572 15.428a2 2 0 01.547-1.022l.477-2.387a6 6 0 01.517-3.86l.158-.318a6 6 0 01.517-3.86l2.387-.477a2 2 0 011.022.547m-14.356 0a2 2 0 00-.547 1.022l-.477 2.387a6 6 0 00.517 3.86l.158.318a6 6 0 00.517 3.86l2.387.477a2 2 0 001.022-.547m14.356-14.356a2 2 0 00-1.022.547l-2.387.477a6 6 0 00-3.86-.517l-.318-.158a6 6 0 01-3.86-.517L6.05 5.12a2 2 0 00-1.022-.547m14.356 0a2 2 0 01.547 1.022l.477 2.387a6 6 0 01-.517 3.86l-.158.318a6 6 0 01-.517 3.86l-2.387.477a2 2 0 01-1.022.547M3.572 5.12a2 2 0 01.547-1.022l.477-2.387a6 6 0 01.517-3.86l.158-.318a6 6 0 01.517-3.86L7.05 1.12a2 2 0 011.022.547"></path></svg>`, color: 'blue' },
-            { title: "Integración Curricular de Tecnología", description: "Acompañamos a los docentes en el desafío de integrar la tecnología de forma transversal y con sentido pedagógico, potenciando su rol como diseñadores de nuevas experiencias de aprendizaje.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>`, color: 'green' },
-            { title: "Ciudadanía Digital Responsable", description: "Formamos comunidades educativas responsables y éticas en el entorno digital, entregando herramientas para una convivencia digital segura, crítica y constructiva, siguiendo los lineamientos del MINEDUC.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>`, color: 'red' },
-            { title: "Formación de Mentores Tecnológicos", description: "Creamos capacidades internas para una transformación sostenible. Empoderamos a un equipo de docentes como mentores para guiar, inspirar y apoyar a sus pares en la adopción de nuevas prácticas.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`, color: 'yellow' },
-            { title: "Inteligencia Artificial en la Educación", description: "Preparamos a su equipo para la nueva era de la IA. Ofrecemos formación para que los docentes aprovechen la Inteligencia Artificial para optimizar su gestión y crear experiencias de aprendizaje personalizadas.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.707.707M12 20.25a.25.25 0 01.25-.25h.01a.25.25 0 01.25.25v.01a.25.25 0 01-.25.25h-.01a.25.25 0 01-.25-.25v-.01z"></path></svg>`, color: 'blue' },
-            { title: "La Industria 4.0 en el Aula", description: "Llevamos los fundamentos de la Industria 4.0 al proyecto educativo, capacitando a docentes para guiar proyectos de robótica, programación, impresión 3D e IoT, convirtiendo la teoría en práctica tangible.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`, color: 'green' },
-            { title: "Curatoría Tecnológica Estratégica", description: "Asesoramos en la adquisición de tecnología con un enfoque en la eficiencia, sostenibilidad y código abierto, optimizando la inversión para asegurar que cada herramienta explote su máximo potencial pedagógico.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>`, color: 'red' },
-            { title: "Diseño de Espacios para el Aprendizaje Activo", description: "Co-diseñamos espacios de aprendizaje (Makerspaces) enfocados en la modularidad y la flexibilidad, creando entornos versátiles que promueven el trabajo multidisciplinario, el movimiento y la interacción.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>`, color: 'yellow' },
-            { title: "Capacitación en Metodologías Activas", description: "Fomentamos un cambio pedagógico real, capacitando a los docentes en metodologías como Design Thinking y Aprendizaje Basado en Proyectos para crear clases más dinámicas, participativas y efectivas.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v1.586M12 17.747v1.586M16.414 7.586L15 9M9 15l-1.414 1.414M17.747 12h-1.586M6.253 12H4.667M16.414 16.414L15 15M9 9L7.586 7.586"></path></svg>`, color: 'blue' }
+            { id: "liderazgo", title: "Liderazgo Digital para la Transformación", description: "A través de charlas y talleres prácticos, trabajamos con directivos y docentes para construir una visión compartida, alinear equipos y entregar las claves para liderar el cambio cultural y tecnológico.", image: './images/ss_liddig.webp' },
+            { id: "integracion", title: "Integración Curricular de Tecnología", description: "Acompañamos a los docentes en el desafío de integrar la tecnología de forma transversal y con sentido pedagógico, potenciando su rol como diseñadores de nuevas experiencias de aprendizaje.", image: './images/ss_intcurr.webp' },
+            { id: "ciudadania", title: "Ciudadanía Digital Responsable", description: "Formamos comunidades educativas responsables y éticas en el entorno digital, entregando herramientas para una convivencia digital segura, crítica y constructiva, siguiendo los lineamientos del MINEDUC.", image: 'https://placehold.co/600x400/E2E8F0/E2E8F0' },
+            { id: "mentores", title: "Formación de Mentores Tecnológicos", description: "Creamos capacidades internas para una transformación sostenible. Empoderamos a un equipo de docentes como mentores para guiar, inspirar y apoyar a sus pares en la adopción de nuevas prácticas.", image: 'https://placehold.co/600x400/E2E8F0/E2E8F0' },
+            { id: "ia", title: "Inteligencia Artificial en la Educación", description: "Preparamos a su equipo para la nueva era de la IA. Ofrecemos formación para que los docentes aprovechen la Inteligencia Artificial para optimizar su gestión y crear experiencias de aprendizaje personalizadas.", image: 'https://placehold.co/600x400/E2E8F0/E2E8F0' },
+            { id: "industria40", title: "La Industria 4.0 en el Aula", description: "Llevamos los fundamentos de la Industria 4.0 al proyecto educativo, capacitando a docentes para guiar proyectos de robótica, programación, impresión 3D e IoT, convirtiendo la teoría en práctica tangible.", image: 'https://placehold.co/600x400/E2E8F0/E2E8F0' },
+            { id: "curatoria", title: "Curatoría Tecnológica Estratégica", description: "Asesoramos en la adquisición de tecnología con un enfoque en la eficiencia, sostenibilidad y código abierto, optimizando la inversión para asegurar que cada herramienta explote su máximo potencial pedagógico.", image: 'https://placehold.co/600x400/E2E8F0/E2E8F0' },
+            { id: "espacios", title: "Diseño de Espacios para el Aprendizaje Activo", description: "Co-diseñamos espacios de aprendizaje (Makerspaces) enfocados en la modularidad y la flexibilidad, creando entornos versátiles que promueven el trabajo multidisciplinario, el movimiento y la interacción.", image: 'https://placehold.co/600x400/E2E8F0/E2E8F0' },
+            { id: "metodologias", title: "Capacitación en Metodologías Activas", description: "Fomentamos un cambio pedagógico real, capacitando a los docentes en metodologías como Design Thinking y Aprendizaje Basado en Proyectos para crear clases más dinámicas, participativas y efectivas.", image: 'https://placehold.co/600x400/E2E8F0/E2E8F0' }
         ];
 
         function populateServices() {
-            const container = document.querySelector('#servicios-page .grid');
+            const container = document.getElementById('services-grid');
             container.innerHTML = ''; // Limpiar
             servicesData.forEach(service => {
-                let borderColorClass = '';
-                switch(service.color) {
-                    case 'blue': borderColorClass = 'border-aa-blue'; break;
-                    case 'green': borderColorClass = 'border-aa-green'; break;
-                    case 'red': borderColorClass = 'border-aa-red'; break;
-                    case 'yellow': borderColorClass = 'border-aa-yellow'; break;
-                }
-
                 const card = `
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 ${borderColorClass} hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
-                    <div class="p-8 flex-grow">
-                        <div class="flex items-center mb-4">
-                             <div class="text-aa-${service.color} mr-4">
-                                ${service.icon}
-                            </div>
-                            <h3 class="text-xl font-bold text-aa-darkblue">${service.title}</h3>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">${service.description}</p>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                    <img src="${service.image}" alt="${service.title}" class="w-full h-48 object-cover">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-aa-darkblue mb-2">${service.title}</h3>
+                        <p class="text-gray-600 leading-relaxed flex-grow">${service.description}</p>
                     </div>
                 </div>
                 `;
@@ -440,12 +428,10 @@
             servicesToShow.forEach(service => {
                  const card = `
                     <div class="flex-shrink-0 w-80 bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="navigateTo('servicios')">
+                         <img src="${service.image}" alt="${service.title}" class="w-full h-40 object-cover">
                         <div class="p-6">
-                            <div class="flex items-center mb-3">
-                                <div class="text-aa-${service.color} mr-4">${service.icon}</div>
-                                <h3 class="text-lg font-bold text-aa-darkblue">${service.title}</h3>
-                            </div>
-                            <p class="text-gray-600 text-sm">${service.description.substring(0, 100)}...</p>
+                            <h3 class="text-lg font-bold text-aa-darkblue mb-2">${service.title}</h3>
+                            <p class="text-gray-600 text-sm h-20 overflow-hidden">${service.description}</p>
                         </div>
                     </div>
                 `;
@@ -478,10 +464,11 @@
         function navigateTo(pageId) {
             pages.forEach(page => {
                 document.getElementById(page + '-page').classList.add('hidden');
-                navLinks[page].classList.remove('active');
+                if (navLinks[page]) navLinks[page].classList.remove('active');
             });
-            document.getElementById(pageId + '-page').classList.remove('hidden');
-            navLinks[pageId].classList.add('active');
+            const activePage = document.getElementById(pageId + '-page');
+            if (activePage) activePage.classList.remove('hidden');
+            if (navLinks[pageId]) navLinks[pageId].classList.add('active');
             window.scrollTo(0, 0);
         }
         
@@ -503,8 +490,7 @@
         const successMessage = document.getElementById('form-success-message');
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Aquí iría la lógica para enviar el formulario a un servicio
-            // Por ahora, solo mostramos un mensaje de éxito
+            // Lógica para enviar el formulario a un servicio
             console.log('Formulario enviado (simulación)');
             contactForm.classList.add('hidden');
             successMessage.classList.remove('hidden');
