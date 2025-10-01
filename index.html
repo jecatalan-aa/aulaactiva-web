@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AulaActiva - Transformación Digital Escolar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #F8F9FA;
+            color: #0B2545;
+        }
+        /* Paleta de Colores Oficial de AulaActiva */
+        :root {
+            --azul: #0071BC;
+            --verde: #39B54A;
+            --rojo: #ED1C24;
+            --amarillo: #FCEE21;
+            --azul-oscuro: #0B2545;
+            --gris-claro: #F8F9FA;
+            --gris-texto: #495057;
+        }
+
+        .bg-aa-blue { background-color: var(--azul); }
+        .bg-aa-green { background-color: var(--verde); }
+        .bg-aa-red { background-color: var(--rojo); }
+        .bg-aa-yellow { background-color: var(--amarillo); }
+        .bg-aa-darkblue { background-color: var(--azul-oscuro); }
+
+        .text-aa-blue { color: var(--azul); }
+        .text-aa-green { color: var(--verde); }
+        .text-aa-red { color: var(--rojo); }
+        .text-aa-yellow { color: var(--amarillo); }
+
+        .border-aa-blue { border-color: var(--azul); }
+        .border-aa-green { border-color: var(--verde); }
+        .border-aa-red { border-color: var(--rojo); }
+        .border-aa-yellow { border-color: var(--amarillo); }
+
+        .hero-bg {
+            background-image: url('./images/herobanner_inicio.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--azul);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 70%;
+        }
+        
+        /* Animaciones */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3" onclick="navigateTo('inicio')">
+                <!-- Logo Oficial de AulaActiva - Vinculado como archivo -->
+                <img src="./images/logoAA_TDE.svg" alt="Logo AulaActiva" class="h-24">
+            </a>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" id="nav-inicio" class="nav-link active font-semibold text-aa-darkblue" onclick="navigateTo('inicio')">Inicio</a>
+                <a href="#" id="nav-servicios" class="nav-link font-semibold text-aa-darkblue" onclick="navigateTo('servicios')">Servicios</a>
+                <a href="#" id="nav-blog" class="nav-link font-semibold text-aa-darkblue" onclick="navigateTo('blog')">Blog</a>
+                <a href="#" id="nav-nosotros" class="nav-link font-semibold text-aa-darkblue" onclick="navigateTo('nosotros')">Nosotros</a>
+            </div>
+
+            <!-- Botón Menú Móvil -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-aa-darkblue focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-lg absolute top-full left-0 w-full transform -translate-x-full">
+            <div class="flex flex-col items-center space-y-4 py-4">
+                <a href="#" class="nav-link font-semibold w-full text-center py-2" onclick="navigateTo('inicio'); closeMobileMenu();">Inicio</a>
+                <a href="#" class="nav-link font-semibold w-full text-center py-2" onclick="navigateTo('servicios'); closeMobileMenu();">Servicios</a>
+                <a href="#" class="nav-link font-semibold w-full text-center py-2" onclick="navigateTo('blog'); closeMobileMenu();">Blog</a>
+                <a href="#" class="nav-link font-semibold w-full text-center py-2" onclick="navigateTo('nosotros'); closeMobileMenu();">Nosotros</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <!-- CONTENEDOR DE PÁGINAS -->
+        <div id="page-container">
+        
+            <!-- PAGINA INICIO -->
+            <div id="inicio-page">
+                <div class="pt-24">
+                    <!-- Sección 1: Hero Banner -->
+                    <section class="hero-bg relative text-white py-24 md:py-36">
+                        <div class="absolute inset-0 bg-aa-darkblue/70"></div>
+                        <div id="heroContent" class="container mx-auto px-6 text-center relative fade-in-section">
+                            <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">Tenemos que hablar del futuro de tus estudiantes.</h1>
+                            <p class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto">La Transformación Digital no es una opción, es una necesidad. Prepara tu colegio para la Industria 4.0 y forma a los ciudadanos de la era digital.</p>
+                            <a href="#ctaFinal" class="bg-aa-red hover:bg-aa-yellow hover:text-aa-darkblue text-white font-bold py-4 px-10 rounded-full text-lg cta-button">
+                                Inicia tu Autodiagnóstico Gratuito
+                            </a>
+                        </div>
+                    </section>
+        
+                    <!-- Sección 2: El Desafío es Ahora (Video) -->
+                    <section id="videoSection" class="bg-aa-darkblue text-white py-16 md:py-24 fade-in-section">
+                        <div class="container mx-auto px-6 text-center">
+                            <h2 class="text-2xl md:text-4xl font-bold mb-8">¿Estamos preparando a nuestros estudiantes para el mundo real?</h2>
+                            <div class="max-w-3xl mx-auto bg-black rounded-xl shadow-2xl overflow-hidden border-4 border-gray-700">
+                                <div class="aspect-w-16 aspect-h-9">
+                                    <!-- Placeholder for video -->
+                                     <div class="w-full h-full bg-gray-900 flex items-center justify-center">
+                                        <p class="text-gray-400">Espacio para Video de Cristina Escobar</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-8 max-w-3xl mx-auto text-lg italic text-gray-300">"No somos conscientes del daño que provocamos al no desarrollar las habilidades que los jóvenes requieren para un mundo global e interconectado. Egresan desactualizados y sin posibilidades de competir."</p>
+                        </div>
+                    </section>
+        
+                    <!-- Sección 3: Nuestra Misión -->
+                    <section id="missionSection" class="py-16 md:py-24 fade-in-section">
+                        <div class="container mx-auto px-6">
+                            <div class="grid md:grid-cols-2 gap-12 items-center">
+                                <div>
+                                    <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue mb-4">Nuestra Misión es Impulsar el Talento del Futuro</h2>
+                                    <p class="text-lg text-gray-700 leading-relaxed">Nuestro desafío es acortar la brecha digital desde el mundo escolar con una metodología que distingue soluciones para distintos contextos. Nos enfocamos en el desarrollo de habilidades digitales, centrando el aprendizaje en el alumno y asegurando un nivel de calidad basado en estándares internacionales.</p>
+                                </div>
+                                <div class="text-center">
+                                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1784&auto=format&fit=crop" alt="Equipo colaborando en un proyecto de innovación" class="rounded-xl shadow-xl mx-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        
+                    <!-- Sección 4: Definición y Pilares -->
+                    <section id="pillarsSection" class="bg-gray-100 py-16 md:py-24 fade-in-section">
+                        <div class="container mx-auto px-6 text-center">
+                            <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue mb-4">¿Qué es la Transformación Digital Escolar (TDx)?</h2>
+                            <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto mb-12 bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                                Es una evolución estratégica y cultural. Es el proceso mediante el cual una institución educativa integra la tecnología en sus ámbitos pedagógico y administrativo para <strong>reimaginar la experiencia educativa</strong>. Su propósito es fortalecer el aprendizaje, apoyar la práctica docente y hacer más eficiente la gestión, preparando ciudadanos para los desafíos del mundo actual.
+                            </p>
+                            
+                            <h3 class="text-xl md:text-3xl font-bold text-aa-darkblue mb-12">Lo logramos a través de 4 Pilares Fundamentales</h3>
+
+                            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                                <!-- Pilar 1 -->
+                                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 border-b-4 border-aa-blue">
+                                    <div class="bg-aa-blue text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-5 shadow-lg">
+                                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 3l6-3m0 10V7"></path></svg>
+                                    </div>
+                                    <h4 class="text-xl font-bold mb-2">Visión y Liderazgo</h4>
+                                    <p class="text-gray-600">Definimos juntos la hoja de ruta, asegurando que la tecnología responda a un objetivo pedagógico claro.</p>
+                                </div>
+                                <!-- Pilar 2 -->
+                                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 border-b-4 border-aa-green">
+                                    <div class="bg-aa-green text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-5 shadow-lg">
+                                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    </div>
+                                    <h4 class="text-xl font-bold mb-2">Habilidades Digitales</h4>
+                                    <p class="text-gray-600">Desarrollamos competencias y fluidez digital en docentes y directivos para potenciar la enseñanza.</p>
+                                </div>
+                                <!-- Pilar 3 -->
+                                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 border-b-4 border-aa-red">
+                                    <div class="bg-aa-red text-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-5 shadow-lg">
+                                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                    </div>
+                                    <h4 class="text-xl font-bold mb-2">Metodologías Activas</h4>
+                                    <p class="text-gray-600">Conectamos la tecnología con pedagogías donde el estudiante asume un rol activo, creando y colaborando.</p>
+                                </div>
+                                <!-- Pilar 4 -->
+                                <div class="bg-white p-8 rounded-xl shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 border-b-4 border-aa-yellow">
+                                    <div class="bg-aa-yellow text-aa-darkblue rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-5 shadow-lg">
+                                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12l-9-9-9 9M3 10v10a2 2 0 002 2h14a2 2 0 002-2V10M12 21V10"></path></svg>
+                                    </div>
+                                    <h4 class="text-xl font-bold mb-2">Infraestructura y Recursos</h4>
+                                    <p class="text-gray-600">Creamos el ecosistema digital que habilita el aprendizaje, desde la conectividad hasta el software robusto.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        
+                    <!-- Sección 5: Proceso a tu medida -->
+                    <section id="processSection" class="py-16 md:py-24 fade-in-section">
+                        <div class="container mx-auto px-6 text-center">
+                            <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue mb-4">De la Visión a la Acción: Un Plan a tu Medida</h2>
+                            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-16">Entendemos que cada comunidad educativa es única. Por eso, nuestra metodología co-diseña una hoja de ruta a partir de tu propia realidad.</p>
+                            <div class="grid md:grid-cols-3 gap-8 text-left max-w-6xl mx-auto relative">
+                                <!-- Línea conectora -->
+                                <div class="absolute top-10 left-0 w-full h-1 bg-gray-200 hidden md:block" style="z-index: -1;"></div>
+                                <!-- Paso 1 -->
+                                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-aa-blue relative">
+                                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-aa-blue text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl border-4 border-white">1</div>
+                                    <h3 class="text-xl font-bold text-center mt-8 mb-4">Diagnóstico: El Punto de Partida</h3>
+                                    <p class="text-gray-600">Todo comienza con nuestro Autodiagnóstico. Esta herramienta nos da una radiografía clara de tus fortalezas y oportunidades en cada uno de los cuatro pilares.</p>
+                                </div>
+                                <!-- Paso 2 -->
+                                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-aa-green relative">
+                                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-aa-green text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl border-4 border-white">2</div>
+                                    <h3 class="text-xl font-bold text-center mt-8 mb-4">Plan de Trabajo Personalizado</h3>
+                                    <p class="text-gray-600">Con los resultados, diseñamos un Plan de Trabajo a la medida. Priorizamos áreas de impacto y definimos metas alcanzables para tu institución.</p>
+                                </div>
+                                <!-- Paso 3 -->
+                                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-aa-red relative">
+                                     <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-aa-red text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl border-4 border-white">3</div>
+                                    <h3 class="text-xl font-bold text-center mt-8 mb-4">Implementación con Propósito</h3>
+                                    <p class="text-gray-600">Activamos el cambio. Cada acción del plan se apoya en nuestros servicios especializados, asegurando una implementación efectiva y sostenible.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        
+                    <!-- Sección 6: CTA Final Autodiagnóstico -->
+                    <section id="ctaFinal" class="bg-aa-blue text-white py-16 md:py-24">
+                        <div class="container mx-auto px-6 text-center">
+                            <h2 class="text-2xl md:text-4xl font-bold mb-4">Da el Primer Paso Hacia la Transformación Digital</h2>
+                            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Realiza nuestro autodiagnóstico en línea y recibe un informe completo más una reunión con nuestros especialistas, de forma totalmente gratuita.</p>
+                            <a href="#" class="bg-aa-yellow text-aa-darkblue font-bold py-4 px-10 rounded-full text-lg cta-button">
+                                Realizar mi Autodiagnóstico Ahora
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <!-- PAGINA SERVICIOS -->
+            <div id="servicios-page" class="hidden">
+                 <div class="pt-24 bg-gray-50"> 
+                    <section class="bg-aa-darkblue text-white py-16 md:py-24">
+                        <div class="container mx-auto px-6 text-center">
+                            <h1 class="text-3xl md:text-5xl font-bold">Nuestro Ecosistema de Servicios</h1>
+                            <p class="text-lg md:text-xl mt-4 max-w-3xl mx-auto">Herramientas concretas para implementar tu plan de transformación y potenciar el aprendizaje en la era digital.</p>
+                        </div>
+                    </section>
+
+                    <section class="py-16 md:py-20">
+                        <div class="container mx-auto px-6">
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <!-- Cards generadas dinámicamente -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- PAGINA BLOG -->
+            <div id="blog-page" class="hidden">
+                 <div class="pt-24 bg-white min-h-screen flex items-center justify-center">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-3xl md:text-5xl font-bold text-aa-darkblue mb-4">Blog en Construcción</h1>
+                        <p class="text-lg md:text-xl text-gray-600">Estamos preparando reflexiones, estrategias y noticias sobre la vanguardia de la educación digital. ¡Vuelve pronto!</p>
+                         <div class="mt-8 text-aa-blue">
+                             <svg class="w-20 h-20 mx-auto animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4.75V6.25m0 11.5v1.5m8.25-8.25h-1.5m-15 0H3.25m16.5-7.5l-1.06 1.06M6.31 17.69l-1.06 1.06M20.75 12a8.75 8.75 0 11-17.5 0 8.75 8.75 0 0117.5 0z"></path></svg>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGINA NOSOTROS -->
+            <div id="nosotros-page" class="hidden">
+                <div class="pt-24 bg-white min-h-screen flex items-center justify-center">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-3xl md:text-5xl font-bold text-aa-darkblue mb-4">Página en Construcción</h1>
+                        <p class="text-lg md:text-xl text-gray-600">Somos un equipo apasionado por la educación. Pronto podrás conocer a quienes hacen posible la transformación en AulaActiva.</p>
+                         <div class="mt-8 text-aa-green">
+                             <svg class="w-20 h-20 mx-auto animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4.75V6.25m0 11.5v1.5m8.25-8.25h-1.5m-15 0H3.25m16.5-7.5l-1.06 1.06M6.31 17.69l-1.06 1.06M20.75 12a8.75 8.75 0 11-17.5 0 8.75 8.75 0 0117.5 0z"></path></svg>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-aa-darkblue text-white">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center">
+                <p>&copy; 2024 AulaActiva. Todos los derechos reservados.</p>
+                <p class="text-sm text-gray-400 mt-2">Comprometidos con la Transformación Digital de la Educación en Chile.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const servicesData = [
+            { title: "Liderazgo Digital para la Transformación", description: "A través de charlas y talleres prácticos, trabajamos con directivos y docentes para construir una visión compartida, alinear equipos y entregar las claves para liderar el cambio cultural y tecnológico.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 14.88a2 2 0 00-1.022.547m14.356 0a2 2 0 01.547 1.022l.477 2.387a6 6 0 01-.517 3.86l-.158.318a6 6 0 01-.517 3.86l-2.387.477a2 2 0 01-1.022-.547M3.572 15.428a2 2 0 01.547-1.022l.477-2.387a6 6 0 01.517-3.86l.158-.318a6 6 0 01.517-3.86l2.387-.477a2 2 0 011.022.547m-14.356 0a2 2 0 00-.547 1.022l-.477 2.387a6 6 0 00.517 3.86l.158.318a6 6 0 00.517 3.86l2.387.477a2 2 0 001.022-.547m14.356-14.356a2 2 0 00-1.022.547l-2.387.477a6 6 0 00-3.86-.517l-.318-.158a6 6 0 01-3.86-.517L6.05 5.12a2 2 0 00-1.022-.547m14.356 0a2 2 0 01.547 1.022l.477 2.387a6 6 0 01-.517 3.86l-.158.318a6 6 0 01-.517 3.86l-2.387.477a2 2 0 01-1.022.547M3.572 5.12a2 2 0 01.547-1.022l.477-2.387a6 6 0 01.517-3.86l.158-.318a6 6 0 01.517-3.86L7.05 1.12a2 2 0 011.022.547"></path></svg>`, color: 'blue' },
+            { title: "Integración Curricular de Tecnología", description: "Acompañamos a los docentes en el desafío de integrar la tecnología de forma transversal y con sentido pedagógico, potenciando su rol como diseñadores de nuevas experiencias de aprendizaje.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>`, color: 'green' },
+            { title: "Ciudadanía Digital Responsable", description: "Formamos comunidades educativas responsables y éticas en el entorno digital, entregando herramientas para una convivencia digital segura, crítica y constructiva, siguiendo los lineamientos del MINEDUC.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>`, color: 'red' },
+            { title: "Formación de Mentores Tecnológicos", description: "Creamos capacidades internas para una transformación sostenible. Empoderamos a un equipo de docentes como mentores para guiar, inspirar y apoyar a sus pares en la adopción de nuevas prácticas.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>`, color: 'yellow' },
+            { title: "Inteligencia Artificial en la Educación", description: "Preparamos a su equipo para la nueva era de la IA. Ofrecemos formación para que los docentes aprovechen la Inteligencia Artificial para optimizar su gestión y crear experiencias de aprendizaje personalizadas.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.707.707M12 20.25a.25.25 0 01.25-.25h.01a.25.25 0 01.25.25v.01a.25.25 0 01-.25.25h-.01a.25.25 0 01-.25-.25v-.01z"></path></svg>`, color: 'blue' },
+            { title: "La Industria 4.0 en el Aula", description: "Llevamos los fundamentos de la Industria 4.0 al proyecto educativo, capacitando a docentes para guiar proyectos de robótica, programación, impresión 3D e IoT, convirtiendo la teoría en práctica tangible.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`, color: 'green' },
+            { title: "Curatoría Tecnológica Estratégica", description: "Asesoramos en la adquisición de tecnología con un enfoque en la eficiencia, sostenibilidad y código abierto, optimizando la inversión para asegurar que cada herramienta explote su máximo potencial pedagógico.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>`, color: 'red' },
+            { title: "Diseño de Espacios para el Aprendizaje Activo", description: "Co-diseñamos espacios de aprendizaje (Makerspaces) enfocados en la modularidad y la flexibilidad, creando entornos versátiles que promueven el trabajo multidisciplinario, el movimiento y la interacción.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2 1M4 7l2-1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>`, color: 'yellow' },
+            { title: "Capacitación en Metodologías Activas", description: "Fomentamos un cambio pedagógico real, capacitando a los docentes en metodologías como Design Thinking y Aprendizaje Basado en Proyectos para crear clases más dinámicas, participativas y efectivas.", icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v1.586M12 17.747v1.586M16.414 7.586L15 9M9 15l-1.414 1.414M17.747 12h-1.586M6.253 12H4.667M16.414 16.414L15 15M9 9L7.586 7.586"></path></svg>`, color: 'blue' }
+        ];
+
+        function populateServices() {
+            const container = document.querySelector('#servicios-page .grid');
+            container.innerHTML = ''; // Limpiar
+            servicesData.forEach(service => {
+                let borderColorClass = '';
+                switch(service.color) {
+                    case 'blue': borderColorClass = 'border-aa-blue'; break;
+                    case 'green': borderColorClass = 'border-aa-green'; break;
+                    case 'red': borderColorClass = 'border-aa-red'; break;
+                    case 'yellow': borderColorClass = 'border-aa-yellow'; break;
+                }
+
+                const card = `
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 ${borderColorClass} hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                    <div class="p-8 flex-grow">
+                        <div class="flex items-center mb-4">
+                             <div class="text-aa-${service.color} mr-4">
+                                ${service.icon}
+                            </div>
+                            <h3 class="text-xl font-bold text-aa-darkblue">${service.title}</h3>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">${service.description}</p>
+                    </div>
+                </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+        
+        // Lógica para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full');
+        });
+        
+        function closeMobileMenu() {
+            if (!mobileMenu.classList.contains('-translate-x-full')) {
+                mobileMenu.classList.add('-translate-x-full');
+            }
+        }
+
+        // --- LÓGICA DE NAVEGACIÓN SPA ---
+        const pages = ['inicio', 'servicios', 'blog', 'nosotros'];
+        const navLinks = {
+            inicio: document.getElementById('nav-inicio'),
+            servicios: document.getElementById('nav-servicios'),
+            blog: document.getElementById('nav-blog'),
+            nosotros: document.getElementById('nav-nosotros'),
+        };
+
+        function navigateTo(pageId) {
+            pages.forEach(page => {
+                document.getElementById(page + '-page').classList.add('hidden');
+                navLinks[page].classList.remove('active');
+            });
+            document.getElementById(pageId + '-page').classList.remove('hidden');
+            navLinks[pageId].classList.add('active');
+            window.scrollTo(0, 0);
+        }
+        
+        // --- Animaciones de Fade-in ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Inicializar la página de servicios
+        populateServices();
+        
+        // Cargar la página de inicio por defecto
+        document.addEventListener('DOMContentLoaded', () => {
+            navigateTo('inicio');
+        });
+
+    </script>
+</body>
+</html>
+
