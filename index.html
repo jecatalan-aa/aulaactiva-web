@@ -91,7 +91,7 @@
             transition: transform 0.3s ease-in-out;
         }
         .mobile-nav-link {
-            padding: 1rem 0; /* Aumenta el padding para más espacio vertical */
+            padding: 1rem 0;
         }
 
         /* Estilos para el carrusel */
@@ -103,9 +103,9 @@
             display: none; /* Chrome, Safari, Opera */
         }
         
-        .pattern-bg {
-             background-color: #f8fafc;
-             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4e6f4' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20-5-5-5 5L11 0zM21 15l5 20-5-5-5 5L21 15zm20 10l5 20-5-5-5 5L41 25zm20 10l5 20-5-5-5 5L61 35zM51 55l5 20-5-5-5 5L51 55zm-20 10l5 20-5-5-5 5L31 65zm-20-10l5 20-5-5-5 5L11 55zM0 35l5 20-5-5-5 5L0 35z'/%3E%3C/g%3E%3C/svg%3E");
+        .bubbles-bg {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%230584D3' fill-opacity='0.08'%3E%3Ccircle cx='25' cy='25' r='8'/%3E%3Ccircle cx='75' cy='75' r='12'/%3E%3Ccircle cx='80' cy='20' r='5'/%3E%3Ccircle cx='20' cy='80' r='6'/%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3C/g%3E%3C/svg%3E");
         }
     </style>
 </head>
@@ -312,8 +312,8 @@
             </div>
 
             <div id="nosotros-page" class="hidden">
-                <div class="pt-32 bg-white">
-                    <section class="py-16 md:py-24 relative pattern-bg">
+                <div class="pt-32 bubbles-bg">
+                    <section class="py-16 md:py-24 relative">
                         <div class="container mx-auto px-6 text-center relative z-10">
                             <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue mb-4">¿Qué es AulaActiva?</h2>
                             <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
@@ -323,20 +323,6 @@
                     </section>
                     
                     <section class="py-16 md:py-24">
-                         <div class="container mx-auto px-6">
-                            <div class="grid md:grid-cols-2 gap-12 items-center">
-                                <div class="text-center">
-                                    <img src="./images/herobanner_inicio.jpg" alt="Misión de AulaActiva" class="w-80 h-80 object-cover rounded-full shadow-xl mx-auto border-8 border-white">
-                                </div>
-                                <div>
-                                    <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue mb-4">Nuestra Misión: Impulsar el Talento del Futuro</h2>
-                                    <p class="text-lg text-gray-700 leading-relaxed">Nuestro desafío es acortar la brecha digital desde el mundo escolar con una metodología que distingue soluciones para distintos contextos. Nos enfocamos en el desarrollo de habilidades digitales, centrando el aprendizaje en el alumno y asegurando un nivel de calidad basado en estándares internacionales.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="bg-gray-100 py-16 md:py-24">
                         <div class="container mx-auto px-6">
                             <h2 class="text-2xl md:text-4xl font-bold text-center text-aa-darkblue mb-16">Nuestro Equipo</h2>
                             <div class="max-w-4xl mx-auto space-y-12">
@@ -355,7 +341,7 @@
                                 </div>
                                 <!-- Ximena -->
                                 <div class="md:flex items-center gap-8 flex-row-reverse">
-                                     <img src="./images/fotoXQ.webp" class="w-48 h-48 object-cover rounded-full mx-auto md:mx-0 flex-shrink-0 shadow-lg mb-6 md:mb-0">
+                                     <img src="./images/fotoXA.webp" class="w-48 h-48 object-cover rounded-full mx-auto md:mx-0 flex-shrink-0 shadow-lg mb-6 md:mb-0">
                                     <div class="md:text-right">
                                         <div class="flex items-center md:justify-end mb-2">
                                             <h3 class="text-2xl font-bold text-aa-darkblue">Ximena Alvarez</h3>
@@ -388,7 +374,7 @@
         </div>
     </main>
 
-    <section id="contact-section" class="bg-gray-100 py-16 md:py-24">
+    <section id="contact-section" class="bubbles-bg py-16 md:py-24">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue">Hablemos de tu Proyecto</h2>
@@ -451,7 +437,7 @@
         const servicesData = [
             { id: "liderazgo", title: "Liderazgo Digital para la Transformación", description: "A través de charlas y talleres prácticos, trabajamos con directivos y docentes para construir una visión compartida, alinear equipos y entregar las claves para liderar el cambio cultural y tecnológico.", image: './images/ss_liddig.webp' },
             { id: "integracion", title: "Integración Curricular de Tecnología", description: "Acompañamos a los docentes en el desafío de integrar la tecnología de forma transversal y con sentido pedagógico, potenciando su rol como diseñadores de nuevas experiencias de aprendizaje.", image: './images/ss_intcurr.webp' },
-            { id: "ciudadania", title: "Ciudadanía Digital Responsable", description: "Formamos comunidades educativas responsables y éticas en el entorno digital, entregando herramientas para una convivencia digital segura, crítica y constructiva, siguiendo los lineamientos del MINEDUC.", image: './images/ss_ciuddug.webp' },
+            { id: "ciudadania", title: "Ciudadanía Digital Responsable", description: "Formamos comunidades educativas responsables y éticas en el entorno digital, entregando herramientas para una convivencia digital segura, crítica y constructiva, siguiendo los lineamientos del MINEDUC.", image: './images/ciuddig.webp' },
             { id: "mentores", title: "Formación de Mentores Tecnológicos", description: "Creamos capacidades internas para una transformación sostenible. Empoderamos a un equipo de docentes como mentores para guiar, inspirar y apoyar a sus pares en la adopción de nuevas prácticas.", image: './images/ss_formment.webp' },
             { id: "ia", title: "Inteligencia Artificial en la Educación", description: "Preparamos a su equipo para la nueva era de la IA. Ofrecemos formación para que los docentes aprovechen la Inteligencia Artificial para optimizar su gestión y crear experiencias de aprendizaje personalizadas.", image: './images/ss_ia.webp' },
             { id: "industria40", title: "La Industria 4.0 en el Aula", description: "Llevamos los fundamentos de la Industria 4.0 al proyecto educativo, capacitando a docentes para guiar proyectos de robótica, programación, impresión 3D e IoT, convirtiendo la teoría en práctica tangible.", image: './images/ss_ind40.webp' },
