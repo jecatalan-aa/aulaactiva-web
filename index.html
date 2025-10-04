@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -94,19 +94,14 @@
             padding: 1rem 0;
         }
 
-        /* Estilos para el carrusel */
         .carousel-container {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
         .carousel-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
+            display: none;
         }
-        
-        .bubbles-bg {
-            background-color: #ffffff;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%230584D3' fill-opacity='0.08'%3E%3Ccircle cx='25' cy='25' r='8'/%3E%3Ccircle cx='75' cy='75' r='12'/%3E%3Ccircle cx='80' cy='20' r='5'/%3E%3Ccircle cx='20' cy='80' r='6'/%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3C/g%3E%3C/svg%3E");
-        }
+
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -312,22 +307,24 @@
             </div>
 
             <div id="nosotros-page" class="hidden">
-                <div class="pt-32 bubbles-bg">
+                <div class="pt-32 bg-white">
                     <section class="py-16 md:py-24 relative">
                         <div class="container mx-auto px-6 text-center relative z-10">
                             <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue mb-4">¿Qué es AulaActiva?</h2>
-                            <p class="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-                                AulaActiva es el socio estratégico que acelera la transformación digital de las instituciones educativas. A través de nuestro modelo integral de 4 pilares —Visión, Infraestructura, Habilidades y Metodologías—, ofrecemos un ecosistema de soluciones que combina la consultoría experta con una innovadora plataforma digital de recursos y proyectos.
-                            </p>
+                            <div class="max-w-4xl mx-auto bg-white/70 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+                                <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                                    AulaActiva es el socio estratégico que acelera la transformación digital de las instituciones educativas. A través de nuestro modelo integral de 4 pilares —Visión, Infraestructura, Habilidades y Metodologías—, ofrecemos un ecosistema de soluciones que combina la consultoría experta con una innovadora plataforma digital de recursos y proyectos.
+                                </p>
+                            </div>
                         </div>
                     </section>
                     
-                    <section class="py-16 md:py-24">
+                    <section class="pb-16 md:pb-24">
                         <div class="container mx-auto px-6">
                             <h2 class="text-2xl md:text-4xl font-bold text-center text-aa-darkblue mb-16">Nuestro Equipo</h2>
                             <div class="max-w-4xl mx-auto space-y-12">
                                 <!-- Cristina -->
-                                <div class="md:flex items-center gap-8">
+                                <div class="md:flex items-center gap-8 bg-white/70 backdrop-blur-sm p-8 rounded-xl shadow-lg">
                                     <img src="./images/fotoCE.webp" class="w-48 h-48 object-cover rounded-full mx-auto md:mx-0 flex-shrink-0 shadow-lg mb-6 md:mb-0">
                                     <div>
                                         <div class="flex items-center mb-2">
@@ -340,7 +337,7 @@
                                     </div>
                                 </div>
                                 <!-- Ximena -->
-                                <div class="md:flex items-center gap-8 flex-row-reverse">
+                                <div class="md:flex items-center gap-8 flex-row-reverse bg-white/70 backdrop-blur-sm p-8 rounded-xl shadow-lg">
                                      <img src="./images/fotoXA.webp" class="w-48 h-48 object-cover rounded-full mx-auto md:mx-0 flex-shrink-0 shadow-lg mb-6 md:mb-0">
                                     <div class="md:text-right">
                                         <div class="flex items-center md:justify-end mb-2">
@@ -353,7 +350,7 @@
                                     </div>
                                 </div>
                                 <!-- José -->
-                                <div class="md:flex items-center gap-8">
+                                <div class="md:flex items-center gap-8 bg-white/70 backdrop-blur-sm p-8 rounded-xl shadow-lg">
                                     <img src="./images/fotoJC.webp" class="w-48 h-48 object-cover rounded-full mx-auto md:mx-0 flex-shrink-0 shadow-lg mb-6 md:mb-0">
                                     <div>
                                         <div class="flex items-center mb-2">
@@ -374,7 +371,7 @@
         </div>
     </main>
 
-    <section id="contact-section" class="bubbles-bg py-16 md:py-24">
+    <section id="contact-section" class="py-16 md:py-24 bg-gray-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-2xl md:text-4xl font-bold text-aa-darkblue">Hablemos de tu Proyecto</h2>
@@ -501,6 +498,7 @@
             blog: document.getElementById('nav-blog'),
             nosotros: document.getElementById('nav-nosotros'),
         };
+        const contactSection = document.getElementById('contact-section');
 
         function navigateTo(pageId) {
             pages.forEach(page => {
@@ -511,6 +509,15 @@
             const activePage = document.getElementById(pageId + '-page');
             if (activePage) activePage.classList.remove('hidden');
             if (navLinks[pageId]) navLinks[pageId].classList.add('active');
+            
+            if(pageId === 'nosotros') {
+                contactSection.classList.add('nosotros-bg');
+                contactSection.classList.remove('bg-gray-100');
+            } else {
+                contactSection.classList.remove('nosotros-bg');
+                contactSection.classList.add('bg-gray-100');
+            }
+
             window.scrollTo(0, 0);
         }
         
