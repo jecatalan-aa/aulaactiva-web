@@ -102,13 +102,6 @@
             display: none;
         }
         
-        .nosotros-tech-bg {
-            background-color: #ffffff;
-            background-image:
-                linear-gradient(rgba(5, 132, 211, 0.07) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(5, 132, 211, 0.07) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -163,12 +156,11 @@
                     <section id="videoSection" class="bg-aa-darkblue text-white py-16 md:py-24 fade-in-section">
                         <div class="container mx-auto px-6 text-center">
                             <h2 class="text-2xl md:text-4xl font-bold mb-8">¿Estamos preparando a nuestros estudiantes para el mundo real?</h2>
-                            <div class="max-w-3xl mx-auto rounded-xl shadow-2xl overflow-hidden border-4 border-gray-700">
-                                <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-                                    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;" src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAG1BWXuIr8&#x2F;7MCUl5_N4Oks3S1LhiPpwQ&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+                            <div class="max-w-3xl mx-auto rounded-xl shadow-2xl overflow-hidden">
+                                <div class="aspect-w-16 aspect-h-9">
+                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/BHxpAcSvqnw?si=RpqY6Spx0eG1Rb_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <p class="mt-8 max-w-3xl mx-auto text-lg italic text-gray-300">"No somos conscientes del daño que provocamos al no desarrollar las habilidades que los jóvenes requieren para un mundo global e interconectado. Egresan desactualizados y sin posibilidades de competir."</p>
                         </div>
                     </section>
         
@@ -316,9 +308,9 @@
                     <section class="py-16 md:py-24 bg-aa-darkblue text-white">
                         <div class="container mx-auto px-6 text-center relative z-10">
                             <h2 class="text-2xl md:text-4xl font-bold mb-4">¿Qué es AulaActiva?</h2>
-                            <p class="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
-                                AulaActiva es el socio estratégico que acelera la transformación digital de las instituciones educativas. A través de nuestro modelo integral de 4 pilares —Visión, Infraestructura, Habilidades y Metodologías—, ofrecemos un ecosistema de soluciones que combina la consultoría experta con una innovadora plataforma digital de recursos y proyectos.
-                            </p>
+                                <p class="text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+                                    AulaActiva es el socio estratégico que acelera la transformación digital de las instituciones educativas. A través de nuestro modelo integral de 4 pilares —Visión, Infraestructura, Habilidades y Metodologías—, ofrecemos un ecosistema de soluciones que combina la consultoría experta con una innovadora plataforma digital de recursos y proyectos.
+                                </p>
                         </div>
                     </section>
                     
@@ -438,7 +430,7 @@
         const servicesData = [
             { id: "liderazgo", title: "Liderazgo Digital para la Transformación", description: "A través de charlas y talleres prácticos, trabajamos con directivos y docentes para construir una visión compartida, alinear equipos y entregar las claves para liderar el cambio cultural y tecnológico.", image: './images/ss_liddig.webp' },
             { id: "integracion", title: "Integración Curricular de Tecnología", description: "Acompañamos a los docentes en el desafío de integrar la tecnología de forma transversal y con sentido pedagógico, potenciando su rol como diseñadores de nuevas experiencias de aprendizaje.", image: './images/ss_intcurr.webp' },
-            { id: "ciudadania", title: "Ciudadanía Digital Responsable", description: "Formamos comunidades educativas responsables y éticas en el entorno digital, entregando herramientas para una convivencia digital segura, crítica y constructiva, siguiendo los lineamientos del MINEDUC.", image: './images/ss_ciuddig.webp' },
+            { id: "ciudadania", title: "Ciudadanía Digital Responsable", description: "Formamos comunidades educativas responsables y éticas en el entorno digital, entregando herramientas para una convivencia digital segura, crítica y constructiva, siguiendo los lineamientos del MINEDUC.", image: './images/ciuddig.webp' },
             { id: "mentores", title: "Formación de Mentores Tecnológicos", description: "Creamos capacidades internas para una transformación sostenible. Empoderamos a un equipo de docentes como mentores para guiar, inspirar y apoyar a sus pares en la adopción de nuevas prácticas.", image: './images/ss_formment.webp' },
             { id: "ia", title: "Inteligencia Artificial en la Educación", description: "Preparamos a su equipo para la nueva era de la IA. Ofrecemos formación para que los docentes aprovechen la Inteligencia Artificial para optimizar su gestión y crear experiencias de aprendizaje personalizadas.", image: './images/ss_ia.webp' },
             { id: "industria40", title: "La Industria 4.0 en el Aula", description: "Llevamos los fundamentos de la Industria 4.0 al proyecto educativo, capacitando a docentes para guiar proyectos de robótica, programación, impresión 3D e IoT, convirtiendo la teoría en práctica tangible.", image: './images/ss_ind40.webp' },
@@ -514,12 +506,11 @@
             if (activePage) activePage.classList.remove('hidden');
             if (navLinks[pageId]) navLinks[pageId].classList.add('active');
             
+            // Lógica para el fondo del formulario de contacto
             if(pageId === 'nosotros') {
-                contactSection.classList.add('nosotros-tech-bg');
-                contactSection.classList.remove('bg-gray-100');
+                document.getElementById('nosotros-page').appendChild(contactSection);
             } else {
-                contactSection.classList.remove('nosotros-tech-bg');
-                contactSection.classList.add('bg-gray-100');
+                document.getElementById(pageId + '-page').appendChild(contactSection);
             }
 
             window.scrollTo(0, 0);
@@ -537,11 +528,9 @@
             observer.observe(section);
         });
         
-        const contactForm = document.getElementById('contact-form');
+        const contactForm = document.querySelector('form[name="contact"]');
         const successMessage = document.getElementById('form-success-message');
         
-        // This is for Netlify Forms, but we'll handle success message manually
-        // for a better UX, as Netlify's default redirect can be disruptive.
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
