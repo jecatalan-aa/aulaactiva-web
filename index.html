@@ -101,6 +101,23 @@
         .carousel-container::-webkit-scrollbar {
             display: none;
         }
+
+        /* Contenedor responsivo para video */
+        .video-responsive {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
         
     </style>
 </head>
@@ -156,9 +173,9 @@
                     <section id="videoSection" class="bg-aa-darkblue text-white py-16 md:py-24 fade-in-section">
                         <div class="container mx-auto px-6 text-center">
                             <h2 class="text-2xl md:text-4xl font-bold mb-8">¿Estamos preparando a nuestros estudiantes para el mundo real?</h2>
-                            <div class="max-w-3xl mx-auto rounded-xl shadow-2xl overflow-hidden">
-                                <div class="aspect-w-16 aspect-h-9">
-                                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/BHxpAcSvqnw?si=RpqY6Spx0eG1Rb_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <div class="max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden">
+                                <div class="video-responsive">
+                                    <iframe src="https://www.youtube.com/embed/BHxpAcSvqnw?si=RpqY6Spx0eG1Rb_0&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
@@ -487,7 +504,7 @@
             }
         }
 
-        const pages = ['inicio', 'servicios', 'blog', 'nosotros'];
+        const pages = ['inicio', 'servicios', 'nosotros', 'blog'];
         const navLinks = {
             inicio: document.getElementById('nav-inicio'),
             servicios: document.getElementById('nav-servicios'),
@@ -506,10 +523,16 @@
             if (activePage) activePage.classList.remove('hidden');
             if (navLinks[pageId]) navLinks[pageId].classList.add('active');
             
+            // Lógica para el fondo del formulario de contacto
             if(pageId === 'nosotros') {
                 document.getElementById('nosotros-page').appendChild(contactSection);
+                contactSection.classList.remove('bg-gray-100');
+                contactSection.classList.add('bg-white'); // Fondo blanco para nosotros
             } else {
+                // Mueve el formulario a la página activa y restaura el fondo gris
                 document.getElementById(pageId + '-page').appendChild(contactSection);
+                contactSection.classList.add('bg-gray-100');
+                contactSection.classList.remove('bg-white');
             }
 
             window.scrollTo(0, 0);
