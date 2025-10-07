@@ -390,8 +390,13 @@
                 <p class="text-lg text-gray-600 mt-2">Completa el formulario y uno de nuestros especialistas se pondrá en contacto contigo.</p>
             </div>
             <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg">
-                <form name="contact" data-netlify="true">
+                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="contact">
+                    <p class="hidden">
+                      <label>
+                        Don’t fill this out if you’re human: <input name="bot-field" />
+                      </label>
+                    </p>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="md:col-span-2">
                             <label for="name" class="block text-gray-700 font-semibold mb-2">Nombre Completo</label>
