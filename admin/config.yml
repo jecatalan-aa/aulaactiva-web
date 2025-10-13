@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: jecatalan-aa/aulaactiva-web # Asegúrate que esto sea TU_USUARIO/TU_REPOSITORIO
   branch: main
 
 media_folder: "assets/images/uploads"
