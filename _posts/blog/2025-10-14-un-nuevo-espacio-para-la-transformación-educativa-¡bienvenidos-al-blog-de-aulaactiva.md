@@ -1,9 +1,9 @@
 ---
-title: "Un Nuevo Espacio para la Transformación Educativa: ¡Bienvenidos al Blog
-  de AulaActiva!"
+title: "Un Nuevo Espacio para la Transformación Educativa: ¡Bienvenidos al Blog de AulaActiva!"
 date: 2025-10-13T19:48:00.000-03:00
 thumbnail: /assets/images/uploads/imgblog_1.webp
 author: AulaActiva
+tags: blog
 ---
 ¡Bienvenidos a nuestro nuevo blog! Con este primer artículo, inauguramos con gran entusiasmo un espacio digital que hemos creado para ti: un punto de encuentro para directivos, docentes, y todos aquellos apasionados por el futuro de la educación en Chile y Latinoamérica.
 

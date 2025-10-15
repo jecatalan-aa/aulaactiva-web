@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: "Archivo del Blog"
+pagination:
+  data: collections.blog
+  size: 10
+  alias: posts
+  reverse: true
+---
+
+<h2>Últimas Publicaciones</h2>
+
+<ul>
+  {%- for post in posts -%}
+    <li>
+      <a href="{{ post.url }}">
+        <h3>{{ post.data.title }}</h3>
+        {% if post.data.thumbnail %}
+          <img src="{{ post.data.thumbnail }}" alt="" width="300">
+        {% endif %}
+        <p>Publicado el: {{ post.data.date.toLocaleDateString('es-CL') }}</p>
+      </a>
+    </li>
+  {%- endfor -%}
+</ul>
