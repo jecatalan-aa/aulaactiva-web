@@ -1,14 +1,16 @@
 module.exports = function(eleventyConfig) {
-    // Le decimos a Eleventy que copie estas carpetas al sitio final tal cual.
-    eleventyConfig.addPassthroughCopy("assets/images");
-    eleventyConfig.addPassthroughCopy("images"); // <-- AÑADE ESTA LÍNEA
-    eleventyConfig.addPassthroughCopy("css"); 
+    // Copia la carpeta de imágenes del blog Y la carpeta de imágenes principal
+    eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("images");
   
     return {
       dir: {
         input: ".",
-        includes: "_includes", // Carpeta para plantillas
-        output: "_site"      // Carpeta donde se genera el sitio
-      }
+        includes: "_includes",
+        output: "_site"
+      },
+      markdownTemplateEngine: "njk",
+      htmlTemplateEngine: "njk",
+      dataTemplateEngine: "njk"
     };
   };

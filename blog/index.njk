@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: "Archivo del Blog"
+title: "Blog"
 pagination:
   data: collections.blog
   size: 10
@@ -8,26 +8,28 @@ pagination:
   reverse: true
 ---
 
-<h2>Últimas Publicaciones</h2>
+<div class="pt-20 bg-white">
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-5xl font-bold text-center mb-12 text-aa-darkblue">El Blog de AulaActiva</h1>
 
-<div class="container mx-auto px-4 py-12">
-  <h2 class="text-3xl font-bold text-center mb-12 text-aa-darkblue">Últimas Publicaciones</h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {%- for post in posts -%}
-      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-        <a href="{{ post.url }}" class="block">
-          {% if post.data.thumbnail %}
-            <img class="w-full h-48 object-cover" src="{{ post.data.thumbnail }}" alt="Imagen del post {{ post.data.title }}">
-          {% endif %}
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-aa-darkblue">{{ post.data.title }}</h3>
-            <p class="text-sm text-gray-600">
-              Publicado el: {{ post.data.date.toLocaleDateString('es-CL') }}
-            </p>
-          </div>
-        </a>
-      </div>
-    {%- endfor -%}
-  </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {%- for post in posts -%}
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                    <a href="{{ post.url | url }}" class="block">
+                        {% if post.data.thumbnail %}
+                        <img class="w-full h-48 object-cover" src="{{ post.data.thumbnail | url }}" alt="Imagen del post {{ post.data.title }}">
+                        {% endif %}
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-aa-darkblue">{{ post.data.title }}</h3>
+                            <p class="text-sm text-gray-600">
+                                Publicado el: {{ post.data.date.toLocaleDateString('es-CL') }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                {%- endfor -%}
+            </div>
+        </div>
+    </section>
 </div>

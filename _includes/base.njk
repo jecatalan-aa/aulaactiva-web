@@ -3,176 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AulaActiva - Transformación Digital Escolar</title>
+    <title>{{ title }} - AulaActiva</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: #F8F9FA;
-            color: #0B2545;
-        }
-        /* Paleta de Colores Oficial de AulaActiva - Precisa */
-        :root {
-            --azul: #0584D3;
-            --verde: #2CAE5F;
-            --rojo: #E6212A;
-            --amarillo: #F8C732;
-            --azul-oscuro: #0B2545;
-            --gris-claro: #F8F9FA;
-            --gris-texto: #495057;
-        }
-
-        .bg-aa-blue { background-color: var(--azul); }
-        .bg-aa-green { background-color: var(--verde); }
-        .bg-aa-red { background-color: var(--rojo); }
-        .bg-aa-yellow { background-color: var(--amarillo); }
-        .bg-aa-darkblue { background-color: var(--azul-oscuro); }
-
-        .text-aa-blue { color: var(--azul); }
-        .text-aa-green { color: var(--verde); }
-        .text-aa-red { color: var(--rojo); }
-        .text-aa-yellow { color: var(--amarillo); }
-
-        .border-aa-blue { border-color: var(--azul); }
-        .border-aa-green { border-color: var(--verde); }
-        .border-aa-red { border-color: var(--rojo); }
-        .border-aa-yellow { border-color: var(--amarillo); }
-
-        .hero-bg {
-            background-image: url('./images/herobanner_inicio.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .cta-button {
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--azul);
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 70%;
-        }
-        
-        /* Animaciones */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-        }
-        .mobile-nav-link {
-            padding: 1rem 0;
-        }
-
-        .carousel-container {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Contenedor responsivo para video */
-        .video-responsive {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        }
-        .video-responsive iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #F8F9FA; color: #0B2545; }
+        :root { --azul: #0584D3; --verde: #2CAE5F; --rojo: #E6212A; --amarillo: #F8C732; --azul-oscuro: #0B2545; --gris-claro: #F8F9FA; --gris-texto: #495057; }
+        .bg-aa-blue { background-color: var(--azul); } .bg-aa-green { background-color: var(--verde); } .bg-aa-red { background-color: var(--rojo); } .bg-aa-yellow { background-color: var(--amarillo); } .bg-aa-darkblue { background-color: var(--azul-oscuro); }
+        .text-aa-blue { color: var(--azul); } .text-aa-green { color: var(--verde); } .text-aa-red { color: var(--rojo); } .text-aa-yellow { color: var(--amarillo); }
+        .border-aa-blue { border-color: var(--azul); } .border-aa-green { border-color: var(--verde); } .border-aa-red { border-color: var(--rojo); } .border-aa-yellow { border-color: var(--amarillo); }
+        .hero-bg { background-image: url('/images/herobanner_inicio.jpg'); background-size: cover; background-position: center; }
+        .cta-button { transition: all 0.3s ease; }
+        .cta-button:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 3px; bottom: -6px; left: 50%; transform: translateX(-50%); background-color: var(--azul); border-radius: 2px; transition: width 0.3s ease; }
+        .nav-link:hover::after, .nav-link.active::after { width: 70%; }
+        .fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+        #mobile-menu { transition: transform 0.3s ease-in-out; } .mobile-nav-link { padding: 1rem 0; }
+        .carousel-container { -ms-overflow-style: none; scrollbar-width: none; } .carousel-container::-webkit-scrollbar { display: none; }
+        .video-responsive { position: relative; overflow: hidden; width: 100%; padding-top: 56.25%; } .video-responsive iframe { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; }
     </style>
 </head>
-<body>
-    <!-- HEADER -->
-    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
+<body class="overflow-x-hidden">
+
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-3" onclick="navigateTo('inicio')">
-                <img src="./images/logoAA_TDE.svg" alt="Logo AulaActiva" class="h-24">
+            <a href="/" class="flex items-center space-x-3">
+                <img src="/images/logoAA_TDE.svg" class="h-20" alt="AulaActiva Logo" />
             </a>
-
-            <!-- Menu Desktop -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#" id="nav-inicio" class="nav-link active font-semibold text-aa-darkblue" onclick="navigateTo('inicio')">Inicio</a>
-                <a href="#" id="nav-servicios" class="nav-link font-semibold text-aa-darkblue" onclick="navigateTo('servicios')">Servicios</a>
-                <a href="#" id="nav-nosotros" class="nav-link font-semibold text-aa-darkblue" onclick="navigateTo('nosotros')">Nosotros</a>
-                <a href="/blog/" class="nav-link font-semibold text-aa-darkblue" onclick="navigateTo('blog')">Blog</a>
+                <a href="/" class="nav-link font-semibold text-aa-darkblue">Inicio</a>
+                <a href="/servicios/" class="nav-link font-semibold text-aa-darkblue">Servicios</a>
+                <a href="/nosotros/" class="nav-link font-semibold text-aa-darkblue">Nosotros</a>
+                <a href="/blog/" class="nav-link font-semibold text-aa-darkblue">Blog</a>
             </div>
-
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-aa-darkblue focus:outline-none">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </nav>
         <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-lg absolute top-full left-0 w-full transform -translate-x-full">
             <div class="flex flex-col items-center">
-                <a href="#" class="mobile-nav-link font-semibold w-full text-center" onclick="navigateTo('inicio'); closeMobileMenu();">Inicio</a>
-                <a href="#" class="mobile-nav-link font-semibold w-full text-center" onclick="navigateTo('servicios'); closeMobileMenu();">Servicios</a>
-                <a href="#" class="mobile-nav-link font-semibold w-full text-center" onclick="navigateTo('nosotros'); closeMobileMenu();">Nosotros</a>
-                <a href="#" class="mobile-nav-link font-semibold w-full text-center" onclick="navigateTo('blog'); closeMobileMenu();">Blog</a>
+                <a href="/" class="mobile-nav-link font-semibold w-full text-center">Inicio</a>
+                <a href="/servicios/" class="mobile-nav-link font-semibold w-full text-center">Servicios</a>
+                <a href="/nosotros/" class="mobile-nav-link font-semibold w-full text-center">Nosotros</a>
+                <a href="/blog/" class="mobile-nav-link font-semibold w-full text-center">Blog</a>
             </div>
         </div>
     </header>
-  <main>
-    {{ content | safe }}
-  </main>
-</body>
+
+    <main>
+        {{ content | safe }}
+    </main>
+<section id="contact-section" class="py-10 md:py-12 bg-gray-100"> <div class="container mx-auto px-6">
+        <div class="text-center mb-6"> <h2 class="text-2xl font-bold text-aa-darkblue">Hablemos de tu Proyecto</h2> <p class="text-lg text-gray-600 mt-2">Completa el formulario y uno de nuestros especialistas se pondrá en contacto contigo.</p>
+        </div>
+        <div class="max-w-4xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg"> <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden">
+                  <label>
+                    No llenes esto si eres humano: <input name="bot-field" />
+                  </label>
+                </p>
+                <div class="grid md:grid-cols-2 gap-4"> <div class="md:col-span-2">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Nombre Completo</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-aa-blue" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-aa-blue" required>
+                    </div>
+                    <div>
+                        <label for="institution" class="block text-gray-700 font-semibold mb-2">Institución Educativa</label>
+                        <input type="text" id="institution" name="institution" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-aa-blue">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Mensaje</label>
+                        <textarea id="message" name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-aa-blue" required></textarea> </div>
+                </div>
+                <div class="text-center mt-6"> <button type="submit" class="bg-aa-red hover:bg-red-700 text-white font-bold py-3 px-10 rounded-full text-lg cta-button">
+                        Enviar Mensaje
+                    </button>
+                </div>
+            </form>
+            <div id="form-success-message" class="hidden mt-6 text-center text-lg p-4 bg-green-100 text-aa-green rounded-lg">
+                ¡Gracias por tu mensaje! Nos pondremos en contacto contigo a la brevedad.
+            </div>
+        </div>
+    </div>
+</section>
     <footer class="bg-aa-darkblue text-white">
         <div class="container mx-auto px-6 py-8">
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-                <div>
-                    <p>&copy; 2024 AulaActiva. Todos los derechos reservados.</p>
-                    <p class="text-sm text-gray-400 mt-2">Comprometidos con la Transformación Digital de la Educación.</p>
-                </div>
+                <div><p>&copy; 2024 AulaActiva. Todos los derechos reservados.</p></div>
                 <div class="flex items-center space-x-4 mt-6 md:mt-0">
                     <a href="mailto:contacto@aulaactiva.cl" class="text-gray-400 hover:text-white transition">contacto@aulaactiva.cl</a>
-                    <a href="https://www.linkedin.com/company/aulaactiva-educacion-digital/" target="_blank" class="text-gray-400 hover:text-white transition">
-                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                    <a href="https://www.instagram.com/aula.activa/" target="_blank" class="text-gray-400 hover:text-white transition">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.441-.645 1.441-1.44s-.646-1.44-1.441-1.44z"/></svg>
-                    </a>
+                    <a href="https://www.linkedin.com/company/aulaactiva-educacion-digital/" target="_blank" class="text-gray-400 hover:text-white transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    <a href="https://www.instagram.com/aula.activa/" target="_blank" class="text-gray-400 hover:text-white transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.441-.645 1.441-1.44s-.646-1.44-1.441-1.44z"/></svg></a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        const servicesData = [
+            { id: "liderazgo", title: "Liderazgo Digital para la Transformación", description: "A través de charlas y talleres prácticos, trabajamos con directivos y docentes para construir una visión compartida, alinear equipos y entregar las claves para liderar el cambio cultural y tecnológico.", image: '/images/ss_liddig.webp' },
+            { id: "integracion", title: "Integración Curricular de Tecnología", description: "Acompañamos a los docentes en el desafío de integrar la tecnología de forma transversal y con sentido pedagógico, potenciando su rol como diseñadores de nuevas experiencias de aprendizaje.", image: '/images/ss_intcurr.webp' },
+            { id: "ciudadania", title: "Ciudadanía Digital Responsable", description: "Formamos comunidades educativas responsables y éticas en el entorno digital, entregando herramientas para una convivencia digital segura, crítica y constructiva, siguiendo los lineamientos del MINEDUC.", image: '/images/ss_ciuddig.webp' },
+            { id: "mentores", title: "Formación de Mentores Tecnológicos", description: "Creamos capacidades internas para una transformación sostenible. Empoderamos a un equipo de docentes como mentores para guiar, inspirar y apoyar a sus pares en la adopción de nuevas prácticas.", image: '/images/ss_formment.webp' },
+            { id: "ia", title: "Inteligencia Artificial en la Educación", description: "Preparamos a su equipo para la nueva era de la IA. Ofrecemos formación para que los docentes aprovechen la Inteligencia Artificial para optimizar su gestión y crear experiencias de aprendizaje personalizadas.", image: '/images/ss_ia.webp' },
+            { id: "industria40", title: "La Industria 4.0 en el Aula", description: "Llevamos los fundamentos de la Industria 4.0 al proyecto educativo, capacitando a docentes para guiar proyectos de robótica, programación, impresión 3D e IoT, convirtiendo la teoría en práctica tangible.", image: '/images/ss_ind40.webp' },
+            { id: "curatoria", title: "Curatoría Tecnológica Estratégica", description: "Asesoramos en la adquisición de tecnología con un enfoque en la eficiencia, sostenibilidad y código abierto, optimizando la inversión para asegurar que cada herramienta explote su máximo potencial pedagógico.", image: '/images/ss_curtec.webp' },
+            { id: "espacios", title: "Diseño de Espacios para el Aprendizaje Activo", description: "Co-diseñamos espacios de aprendizaje (Makerspaces) enfocados en la modularidad y la flexibilidad, creando entornos versátiles que promueven el trabajo multidisciplinario, el movimiento y la interacción.", image: '/images/ss_disesp.webp' },
+            { id: "metodologias", title: "Capacitación en Metodologías Activas", description: "Fomentamos un cambio pedagógico real, capacitando a los docentes en metodologías como Design Thinking y Aprendizaje Basado en Proyectos para crear clases más dinámicas, participativas y efectivas.", image: '/images/ss_capmet.webp' }
+        ];
+
+        function populateServices() {
+            const container = document.getElementById('services-grid');
+            if (!container) return;
+            container.innerHTML = '';
+            servicesData.forEach(service => {
+                const card = `<div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col"><img src="${service.image}" alt="${service.title}" class="w-full h-48 object-cover"><div class="p-6 flex-grow flex flex-col"><h3 class="text-xl font-bold text-aa-darkblue mb-2">${service.title}</h3><p class="text-gray-600 leading-relaxed flex-grow">${service.description}</p></div></div>`;
+                container.innerHTML += card;
+            });
+        }
+        
+        function populateCarousel() {
+            const container = document.getElementById('carousel-container');
+            if (!container) return;
+            container.innerHTML = '';
+            servicesData.slice(0, 6).forEach(service => {
+                 const card = `<div class="flex-shrink-0 w-80 bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="window.location.href='/servicios/'"><img src="${service.image}" alt="${service.title}" class="w-full h-40 object-cover"><div class="p-6"><h3 class="text-lg font-bold text-aa-darkblue text-center">${service.title}</h3></div></div>`;
+                container.innerHTML += card;
+            });
+        }
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('-translate-x-full'));
+        }
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('is-visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in-section').forEach(section => observer.observe(section));
+        
+        const contactForm = document.querySelector('form[name="contact"]');
+        if(contactForm) {
+            const successMessage = document.getElementById('form-success-message');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const myForm = e.target;
+                const formData = new FormData(myForm);
+                fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString(),
+                }).then(() => {
+                    myForm.reset();
+                    successMessage.classList.remove('hidden');
+                    setTimeout(() => { successMessage.classList.add('hidden'); }, 5000);
+                }).catch((error) => alert(error));
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            populateServices();
+            populateCarousel();
+        });
+    </script>
+</body>
 </html>
