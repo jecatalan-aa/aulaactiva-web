@@ -2,6 +2,8 @@ module.exports = function(eleventyConfig) {
     // Copia la carpeta de imágenes del blog Y la carpeta de imágenes principal
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("images");
+    eleventyConfig.addPassthroughCopy("admin"); // <-- AÑADE ESTA LÍNEA
+
   
     return {
       dir: {
