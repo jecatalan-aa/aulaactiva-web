@@ -1,6 +1,7 @@
 ---
-title: "Un Nuevo Espacio para la Transformación Educativa: ¡Bienvenidos al Blog de AulaActiva!"
-date: 2025-10-13T19:48:00.000-03:00
+title: "Un Nuevo Espacio para la Transformación Educativa: ¡Bienvenidos al Blog
+  de AulaActiva!"
+date: 2024-02-14T19:48:00.000-03:00
 thumbnail: /assets/images/uploads/imgblog_1.webp
 author: AulaActiva
 tags: blog
