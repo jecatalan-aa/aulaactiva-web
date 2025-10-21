@@ -7,7 +7,7 @@ tags: blog
 ---
 En Chile, el año 2022, el Mineduc comenzó la discusión sobre la actualización curricular y ahora nos encontramos en la etapa de “ajustes y enriquecimiento”. Durante noviembre, según el plan, se deberá presentar la propuesta final al Consejo Nacional de Educación (CNED). 
 
-De acuerdo a la propuesta de actualización para consulta pública emitida por el Mineduc para la hashtag#asignatura de “Tecnología e Innovación”, como Aula Activa apreciamos un problema de foco. 
+De acuerdo a la propuesta de actualización para consulta pública emitida por el Mineduc para la asignatura de “Tecnología e Innovación”, como Aula Activa apreciamos un problema de foco. 
 
 La propuesta del Mineduc presenta 5 enfoques para la asignatura: Comprensión de la tecnología, Ciudadanía digital, Resolución de problemas para la sustentabilidad, Innovar para aprender y Comunicar para transformar.
 
