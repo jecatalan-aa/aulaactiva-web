@@ -65,6 +65,8 @@ Como señala el "Marco de Acción para la Transformación Digital" del Mineduc, 
 
 En AulaActiva, hemos diseñado nuestro [Autodiagnóstico de Transformación Digital](https://tally.so/r/3NGB1B) precisamente para esto. Basado en nuestros 4 Pilares (Visión, Habilidades, Metodologías e Infraestructura), te permite identificar tu punto de partida para construir una hoja de ruta realista y efectiva.
 
-La tecnología no va a reemplazar a los docentes, pero los docentes que usen tecnología para potenciar su pedagogía, y la de sus estudiantes, liderarán el cambio.``
+La tecnología no va a reemplazar a los docentes, pero los docentes que usen tecnología para potenciar su pedagogía, y la de sus estudiantes, liderarán el cambio.
+
+
 
 \#Lectoescritura #AprendizajeActivo #InnovacionEducativa #TransformacionDigital #Fonetica #Industria4.0 #HabilidadesSiglo21 #docentes #directivos #4pilares #AutodiagnosticoTD #EducacionChile #BrechaDigital #CodigoAbierto #proyectosquefuncionan #Construccionismo
