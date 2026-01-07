@@ -15,31 +15,11 @@ Superada la crisis de asistencia, debemos volver a concentrarnos en los problema
 
 **El diagnóstico:** 
 
-1. En Chile, la 
-
-   [Productividad Total de los Factores](https://cnep.cl/dashboard/)
-
-    (PTF) ha permanecido estancada por más de una década, con proyecciones de crecimiento casi nulas para este ciclo. No es un problema coyuntural, sino una incapacidad estructural para generar valor agregado. Estamos atrapados en una "trampa de ingresos medios" que solo se puede romper mediante una reingeniería profunda de nuestra formación de capital humano.
-2. El déficit de profesionales en el sector de Tecnologías de la Información (TI) en Chile ha alcanzado niveles críticos. Las estimaciones sugieren una brecha que podría ascender a 
-
-   [cientos de miles](https://aiem.cl/blog/talento-digital-chile-2025/)
-
-    de puestos de trabajo sin cubrir este 2026.
-3. La propuesta curricular del 2024 de 
-
-   [Tecnología e Innovación](https://www.mineduc.cl/mineduc-presenta-propuesta-de-actualizacion-del-curriculum-escolar-de-1-basico-a-2-medio-que-sera-sometida-a-consulta-publica/)
-
-    del Mineduc prioriza un enfoque sociotécnico sofisticado, pero carece de profundidad técnica operativa, omitiendo la programación y el pensamiento computacional como disciplinas troncales obligatorias, y en consecuencia, continuarán egresando estudiantes sin un mandato universal de entendimiento y dominio en la Industria 4.0.
-4. La EMTP sufre una 
-
-   [brecha crítica](https://educa.fme.cl/wp-content/uploads/2024/06/FPD-Desafios-y-Oportunidades-de-la-EMTP-en-Chile-mayo-2024.pdf)
-
-    de actualización ante la Industria 4.0. Enseñar tecnologías heredadas y la falta de formación docente concurrente provocan que la inversión en equipamiento avanzado sea subutilizada, manteniendo la desconexión estructural con la realidad productiva.
-5. Chile enfrenta una "doble crisis" docente: 
-
-   [escasez crítica de profesores](https://noticias.ubiobio.cl/2025/07/30/la-educacion-en-riesgo-el-deficit-docente-no-solo-es-una-estadistica/)
-
-    técnicos y una brecha de competencias por formación pre-digital. La formación inicial prioriza el uso pedagógico de TIC sobre la enseñanza disciplinar de la computación, y la capacitación continua actual es insuficiente. 
+1. En Chile, la [Productividad Total de los Factores ](https://cnep.cl/dashboard/)(PTF) ha permanecido estancada por más de una década, con proyecciones de crecimiento casi nulas para este ciclo. No es un problema coyuntural, sino una incapacidad estructural para generar valor agregado. Estamos atrapados en una "trampa de ingresos medios" que solo se puede romper mediante una reingeniería profunda de nuestra formación de capital humano.
+2. El déficit de profesionales en el sector de Tecnologías de la Información (TI) en Chile ha alcanzado niveles críticos. Las estimaciones sugieren una brecha que podría ascender a [cientos de miles ](https://aiem.cl/blog/talento-digital-chile-2025/)de puestos de trabajo sin cubrir este 2026.
+3. La propuesta curricular del 2024 de [Tecnología e Innovación ](https://www.mineduc.cl/mineduc-presenta-propuesta-de-actualizacion-del-curriculum-escolar-de-1-basico-a-2-medio-que-sera-sometida-a-consulta-publica/)del Mineduc prioriza un enfoque sociotécnico sofisticado, pero carece de profundidad técnica operativa, omitiendo la programación y el pensamiento computacional como disciplinas troncales obligatorias, y en consecuencia, continuarán egresando estudiantes sin un mandato universal de entendimiento y dominio en la Industria 4.0.
+4. La EMTP sufre una [brecha crítica](https://educa.fme.cl/wp-content/uploads/2024/06/FPD-Desafios-y-Oportunidades-de-la-EMTP-en-Chile-mayo-2024.pdf) de actualización ante la Industria 4.0. Enseñar tecnologías heredadas y la falta de formación docente concurrente provocan que la inversión en equipamiento avanzado sea subutilizada, manteniendo la desconexión estructural con la realidad productiva.
+5. Chile enfrenta una "doble crisis" docente: [escasez crítica de profesores ](https://noticias.ubiobio.cl/2025/07/30/la-educacion-en-riesgo-el-deficit-docente-no-solo-es-una-estadistica/)técnicos y una brecha de competencias por formación pre-digital. La formación inicial prioriza el uso pedagógico de TIC sobre la enseñanza disciplinar de la computación, y la capacitación continua actual es insuficiente. 
 
 
 
@@ -93,8 +73,6 @@ Creación de "Hubs Tecnológicos Comunales": Dado que es ineficiente equipar cad
 Propuesta 6: Articulación Talento Digital - Educación Formal.
 
 Utilizar la exitosa metodología de bootcamps de "[Talento Digital para Chile](https://talentodigitalparachile.cl/)" para ofrecer módulos intensivos dentro de los liceos TP durante 3° y 4° medio. Los egresados deberían poder convalidar estos módulos en Centros de Formación Técnica (CFT) estatales, acortando sus carreras de educación superior y acelerando su entrada al mercado laboral.
-
-
 
 **Conclusión:** 
 
