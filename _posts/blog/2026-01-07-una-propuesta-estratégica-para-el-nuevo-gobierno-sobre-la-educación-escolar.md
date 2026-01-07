@@ -11,9 +11,9 @@ Terminó el 2025 y la buena noticia en la educación escolar en Chile fue la rec
 
 Superada la crisis de asistencia, debemos volver a concentrarnos en los problemas estructurales de la educación y ahora el 2026 lo marca el hito del cambio de gobierno. Desde [AulaActiva](https://aulaactiva.cl/) nos atrevemos a plantearle a la nueva administración una propuesta estratégica, para enfocar el trabajo del Mineduc en relación a la transformación digital escolar y sobretodo, sus implicancias en el currículum y la formación docente. 
 
+
+
 **El diagnóstico:** 
-
-
 
 1. En Chile, la 
 
@@ -49,6 +49,8 @@ Las naciones líderes en innovación han resuelto la integración de la Industri
 
 Por otro lado, Alemania y Australia ofrecen modelos estructurales para evitar la obsolescencia educativa y el rezago tecnológico. El sistema dual alemán ([VET 4.0](https://www.cedefop.europa.eu/en/tools/timeline-vet-policies-europe/search/28126)) permite que los aprendices se formen directamente en fábricas con sistemas ciberfísicos reales, resolviendo el problema del equipamiento escolar desfasado. Simultáneamente, [Australia](https://www.digitaltechnologieshub.edu.au/) ha establecido las Tecnologías Digitales como un tronco curricular obligatorio desde el primer año de escolaridad, priorizando el desarrollo del pensamiento computacional y la implementación de algoritmos por sobre el simple uso de herramientas digitales.
 
+
+
 **La estrategia propuesta:** 
 
 Lo planteamos en 3 ejes: currículum, formación docente y experiencia dual, cada uno con 2 propuestas específicas. 
@@ -57,13 +59,9 @@ Lo planteamos en 3 ejes: currículum, formación docente y experiencia dual, cad
 
 Propuesta 1: Se debe separar la actual asignatura de Tecnología en dos vertientes o redefinirla radicalmente. Siguiendo el modelo australiano, Chile debe implementar una asignatura obligatoria de "Pensamiento Computacional y Programación" desde 1° Básico hasta 2° Medio.
 
-
-
 * Ciclo 1° a 4° Básico: Programación desconectada y bloques (Scratch). Foco en lógica.
 * Ciclo 5° a 8° Básico: Introducción a la programación textual (Python) y robótica básica.
 * Ciclo I° a II° Medio: Proyectos de Ciencia de Datos, IA básica, desarrollo web y diseño y fabricación digital.
-
-
 
 Esto requiere garantizar horas lectivas que no puedan ser canibalizadas por reforzamientos de Lenguaje o Matemáticas.
 
@@ -71,12 +69,8 @@ Propuesta 2: Currículum ágil para la EMTP.
 
 El proceso de actualización de especialidades TP debe flexibilizarse. Se propone un modelo de "Núcleo + Satélite":
 
-
-
 * Núcleo: 60% del currículum fijo (fundamentos que no cambian rápido).
 * Satélite: 40% del currículum revisable anualmente mediante decretos simplificados, incorporando micro-certificaciones de la industria (AWS, Google, Cisco, Microsoft) como válidas para la promoción escolar. Esto permite que un estudiante de "Programación" salga certificado en Cloud Computing o Ciberseguridad, aumentando su empleabilidad inmediata.
-
-
 
 **Eje 2: Formación docente.**
 
@@ -99,6 +93,8 @@ Creación de "Hubs Tecnológicos Comunales": Dado que es ineficiente equipar cad
 Propuesta 6: Articulación Talento Digital - Educación Formal.
 
 Utilizar la exitosa metodología de bootcamps de "[Talento Digital para Chile](https://talentodigitalparachile.cl/)" para ofrecer módulos intensivos dentro de los liceos TP durante 3° y 4° medio. Los egresados deberían poder convalidar estos módulos en Centros de Formación Técnica (CFT) estatales, acortando sus carreras de educación superior y acelerando su entrada al mercado laboral.
+
+
 
 **Conclusión:** 
 
